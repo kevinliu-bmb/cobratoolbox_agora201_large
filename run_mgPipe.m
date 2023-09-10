@@ -40,11 +40,8 @@ initCobraToolbox
 
 solverOK=changeCobraSolver('ibm_cplex','LP');
 %% Prepare input data and models
-websave('AGORA-master.zip','https://github.com/VirtualMetabolicHuman/AGORA/archive/master.zip')
-try
-    unzip('AGORA-master')
-end
-modPath = [pwd filesep 'AGORA-master' filesep 'CurrentVersion' filesep 'AGORA_1_03' filesep' 'AGORA_1_03_mat'];
+
+modPath = [pwd filesep 'AGORA201'];
 
 
 % modPath = [pwd filesep 'AGORA201'];
@@ -57,7 +54,7 @@ modPath = [pwd filesep 'AGORA-master' filesep 'CurrentVersion' filesep 'AGORA_1_
 % the following code:
 %
 % websave('SRP065497_taxonomy_abundances_v3.0.tsv','https://www.ebi.ac.uk/metagenomics/api/v1/studies/MGYS00001248/pipelines/3.0/file/SRP065497_taxonomy_abundances_v3.0.tsv')
-% [translatedAbundances,normalizedAbundances,unmappedRows] = translateMetagenome2AGORA('SRP065497_taxonomy_abundances_v3.0.tsv','Species');
+ % [translatedAbundances,normalizedAbundances,unmappedRows] = translateMetagenome2AGORA('Leonard2020PNAS_onset_case_control.csv','Species', 'AGORA');
 %% 
 % _translateMetagenome2AGORA_ translates the output of common sequencing pipelines 
 % (e.g., MetaPhlAn) to the names of the AGORA models. However, the function may 
@@ -99,15 +96,15 @@ modPath = [pwd filesep 'AGORA-master' filesep 'CurrentVersion' filesep 'AGORA_1_
 % 
 % number of cores dedicated for parallelization (default=2)
 
-numWorkers = 22;
+numWorkers = 11;
 %% 
 % Define the taxonomical level of created pan-models
 
-panPath=[pwd filesep 'panStrainModels'];
+% panPath=[pwd filesep 'panStrainModels'];
 
-taxonLevel='Strain';
+% taxonLevel='Strain';
 
-createPanModels(modPath,panPath,taxonLevel);
+% createPanModels(modPath,panPath,taxonLevel);
 %% 
 % By setting panPath as the input variable modPath for initMgPipe, personalized 
 % microbiome models for the samples from the above study with the EMBL-EBI accession 
@@ -194,7 +191,7 @@ computeProfiles = true;
 % Path to csv file for stratification criteria (if empty or not existent no 
 % criteria is used)
 
-infoFilePath = '';
+infoFilePath = 'sample_info.txt';
 %% 
 % Calling the function initMgPipe will execute Part 1 to 3 of the pipeline.
 

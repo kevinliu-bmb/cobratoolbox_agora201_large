@@ -1,0 +1,5 @@
+	Case_1_18_month	Case_10_18_month	Case_2_24_month	Case_3_24_month	Case_4_18_month	Case_5_48_month	Case_6_24_month	Case_7_30_month	Case_8_18_month	Case_9_30_month	Control_1_18_month	Control_10_18_month	Control_2_24_month	Control_3_24_month	Control_4_18_month	Control_5_48_month	Control_6_24_month	Control_7_30_month	Control_8_18_month	Control_9_30_month
+panBilophila_wadsworthia	0	0	0	0	0	0	0	0.000611152797396329	0	0	0	0	0	0	0	0.002067865394352	0	0.000413911271095674	0	0
+panButyricicoccus_pullicaecorum	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0.000562436011282674	0	0	0
+panPediococcus_acidilactici	0	0	0	0	0.000659577661816734	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+panRuminococcaceae_bacterium_D16	0	0	0.000276880857824151	0	0	0	0	0.000179849741281486	0	0	0	0	0	0	0	0.000185250067084026	0	0	0	0
