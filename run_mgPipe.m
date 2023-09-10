@@ -40,8 +40,14 @@ initCobraToolbox
 
 solverOK=changeCobraSolver('ibm_cplex','LP');
 %% Prepare input data and models
+websave('AGORA-master.zip','https://github.com/VirtualMetabolicHuman/AGORA/archive/master.zip')
+try
+    unzip('AGORA-master')
+end
+modPath = [pwd filesep 'AGORA-master' filesep 'CurrentVersion' filesep 'AGORA_1_03' filesep' 'AGORA_1_03_mat'];
 
-modPath = [pwd filesep 'AGORA201'];
+
+% modPath = [pwd filesep 'AGORA201'];
 %% Preparing the input file with normalized abundances
 % Preparing an input file suitable for mgPipe requires mapping the organisms 
 % to the nomenclature of the AGORA models. A function that can help with this 
@@ -134,7 +140,7 @@ dietFilePath='AverageEuropeanDiet';
 % version of the example file (normCoverageReduced.csv) provided in the folder 
 % Resources: only 4 individuals and 10 strains will be considered.
 
-abunFilePath='.csv';
+abunFilePath='Leonard2020PNAS_onset_case_control.csv';
 %% 
 % For the creation of personalized models, mgPipe offers two strategies that 
 % are selected in the input variable buildSetupAll. By default, a global metabolic 
